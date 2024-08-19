@@ -21,10 +21,5 @@ readline = sys.stdin.readline
 N, M = map(int, readline().split())
 sequence = list(map(int, readline().split()))
 sequence.sort()
-visited = [False] * N
 
-if M == 1:
-    output = '\n'.join(map(str, sequence))
-    print(output)
-else:
-    back(0)
+back(0)
