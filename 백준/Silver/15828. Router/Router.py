@@ -14,12 +14,15 @@ N: 버퍼 크기
 출력
 라우터에 남아있는 패킷 출력
 비어있으면 empty
+
+O(N)
+10만 * 20만 = 2 * 10^10 => 1초를 벗어남
 """
 
-import sys
+from collections import deque
 
 buffer_size = int(input())
-buffer = []
+buffer = deque()
 
 while True:
     pack = int(input())
@@ -27,7 +30,7 @@ while True:
         break
 
     if pack == 0:
-        buffer.pop(0)
+        buffer.popleft()
         continue
 
     if len(buffer) >= buffer_size:
