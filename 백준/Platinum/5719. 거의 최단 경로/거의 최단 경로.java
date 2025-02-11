@@ -113,7 +113,7 @@ public class Main {
                     continue;
                 }
 
-                if (dist[cur] == dist[next] + nextCost) { // 해당 간선은 삭제
+                if (dist[next] == (dist[cur]-nextCost)) { // 해당 간선은 삭제
                     used[nextIdx] = true;
                     q.add(next);
                 }
