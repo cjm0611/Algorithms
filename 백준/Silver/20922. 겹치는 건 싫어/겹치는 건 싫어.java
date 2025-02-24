@@ -26,11 +26,7 @@ public class Main {
             int rKey = inputs[r];
             int rCnt = map.getOrDefault(rKey, 0);
             if (rCnt < K) {
-                if (rCnt == 0) {
-                    map.put(rKey, 0);
-                }
-
-                map.replace(rKey, rCnt+1);
+                map.put(rKey, rCnt+1);
                 answer = Math.max(answer, r-l+1);
                 r++;
                 continue;
@@ -38,7 +34,7 @@ public class Main {
 
             int lKey = inputs[l];
             int lCnt = map.get(lKey);
-            map.replace(lKey, lCnt-1);
+            map.put(lKey, lCnt-1);
             l++;
         }
 
